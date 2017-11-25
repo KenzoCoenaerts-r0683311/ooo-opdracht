@@ -1,6 +1,5 @@
 package db;
 
-import domain.DomainException;
 import domain.Speler;
 
 import java.util.ArrayList;

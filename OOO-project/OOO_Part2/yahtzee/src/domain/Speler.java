@@ -16,6 +16,7 @@ public class Speler {
 		if(naam == null || naam.trim().isEmpty()){
 			throw new DomainException("Geef een naam in.");
 		}
+
 		this.naam = naam;
 	}
 	

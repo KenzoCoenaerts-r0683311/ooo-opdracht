@@ -1,8 +1,6 @@
 package application;
 
 import domain.DomainException;
-import domain.Speler;
-import db.SpelersLijst;
 import domain.SpelerController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;

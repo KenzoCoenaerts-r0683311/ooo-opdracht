@@ -12,10 +12,6 @@ public class SpelerController {
     }
 
     public void createSpeler(String name){
-        if(name == null || name.trim().isEmpty()){
-            throw new DomainException("geef een naam in.");
-        }
-
         Speler speler = new Speler(name);
 
         if(spelersLijst.beschikbareSpeler(speler)) {

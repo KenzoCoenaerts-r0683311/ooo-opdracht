@@ -18,5 +18,17 @@ public class Speler {
 		}
 		this.naam = naam;
 	}
+	
+	@Override
+    	public boolean equals(Object o){
+	    if(o != null) {
+            	Speler s = (Speler)o;
 
+            	if(this.getNaam().equals(((Speler) o).getNaam())){
+                	return true;
+            	}
+        }
+
+        return false;
+    }
 }

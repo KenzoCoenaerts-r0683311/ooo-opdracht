@@ -3,13 +3,10 @@ package domain;
 import java.util.Random;
 
 public class Dobbelsteen {
-    private Random rand;
+    public Dobbelsteen(){}
 
-    public Dobbelsteen(){
-        rand = new Random();
-    }
-
-    public int getNumber(){
+    public static int getNumber(){
+        Random rand = new Random();
         return rand.nextInt(6) + 1;
     }
 }

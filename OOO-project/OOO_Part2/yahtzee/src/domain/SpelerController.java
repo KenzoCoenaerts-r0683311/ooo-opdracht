@@ -5,6 +5,7 @@ import db.SpelersLijst;
 import java.util.ArrayList;
 
 public class SpelerController {
+    private int currentSpeler = 0;
     private SpelersLijst spelersLijst;
 
     public SpelerController(){
@@ -21,9 +22,20 @@ public class SpelerController {
         }
     }
 
-    public void getSpelers(){
-        for(Speler s : spelersLijst.getSpelers()){
-            System.out.print(s.getNaam() + " - ");
-        }
+    public String getNextSpeler(){
+        Speler speler = spelersLijst.getSpeler(currentSpeler);
+        currentSpeler++;
+        return speler.getNaam();
+
+    }
+
+    public int getDice(int i ){
+        return spelersLijst.getSpeler(currentSpeler - 1)
+                           .getDobbelsteen(i);
+    }
+
+    public void rolDices(){
+        spelersLijst.getSpeler(currentSpeler - 1)
+                    .rolDobbelstenen();
     }
 }

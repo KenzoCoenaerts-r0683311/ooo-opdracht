@@ -24,6 +24,23 @@ public class SpelerTest {
     }
 
     @Test(expected = DomainException.class)
+    public void Speler_getDobbelsteen_gooit_exception_if_param_kleiner_dan_0(){
+        speler = new Speler("kenzo");
+        speler.getDobbelsteen(-1);
+    }
+
+    @Test
+    public void Speler_getDobbelsteen_geeft_getal_tussen_1_en_6(){
+        speler = new Speler("kenzo");
+        int num = speler.getDobbelsteen(0);
+        if( num >= 1 && num <= 6 ){
+            assertEquals(1, 1);
+        } else {
+            assertEquals(1, 0);
+        }
+    }
+
+    @Test(expected = DomainException.class)
     public void speler_equals_gooit_exception_geef_null_als_speler_null(){
         speler = new Speler("kenzo");
         speler.equals(null);

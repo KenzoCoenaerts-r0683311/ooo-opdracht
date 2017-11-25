@@ -33,7 +33,11 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 		if (event.getSource() == registratieOk) {
 			try {
                 controller.createSpeler(registratieInput.getText());
-                controller.getSpelers();
+                System.out.println(controller.getNextSpeler());
+                for( int i = 0; i < 5; i++ ){
+                    System.out.print(controller.getDice(i) + ", ");
+                }
+                controller.rolDices();
                 System.out.println();
 				Stage stage = (Stage) registratieOk.getScene().getWindow();
 				stage.close();

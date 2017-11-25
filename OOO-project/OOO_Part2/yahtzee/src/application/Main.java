@@ -2,7 +2,8 @@ package application;
 
 import domain.DomainException;
 import domain.Speler;
-import domain.SpelersLijst;
+import db.SpelersLijst;
+import domain.SpelerController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,13 +18,13 @@ import javafx.stage.Stage;
 
 public class Main extends Application implements EventHandler<ActionEvent> {
 
-	int counter = 1;
-	Button registratieOk;
-	Button registratieCancel;
-	Label registratieLabel = new Label("What's your name?");
-	TextField registratieInput = new TextField();
-	Label registratieError = new Label();
-	SpelersLijst spelers = new SpelersLijst();
+	private int counter = 1;
+	private Button registratieOk;
+	private Button registratieCancel;
+	private Label registratieLabel = new Label("What's your name?");
+	private TextField registratieInput = new TextField();
+	private Label registratieError = new Label();
+	private SpelerController controller = new SpelerController();
 
 	public static void main(String[] args) {
 		launch(args);
@@ -33,10 +34,9 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		if (event.getSource() == registratieOk) {
 			try {
-				spelers.beschikbareSpeler(registratieInput.getText());
-				Speler nieuweSpeler = new Speler(registratieInput.getText());
-				System.out.println(nieuweSpeler.getNaam());
-				spelers.addSpeler(nieuweSpeler);
+                controller.createSpeler(registratieInput.getText());
+                controller.getSpelers();
+                System.out.println();
 				Stage stage = (Stage) registratieOk.getScene().getWindow();
 				stage.close();
 				counter++;

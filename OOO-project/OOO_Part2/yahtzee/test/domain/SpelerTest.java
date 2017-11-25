@@ -22,4 +22,26 @@ public class SpelerTest {
         speler = new Speler("banaan");
         assertEquals("banaan", speler.getNaam());
     }
+
+    @Test(expected = DomainException.class)
+    public void speler_equals_gooit_exception_geef_null_als_speler_null(){
+        speler = new Speler("kenzo");
+        speler.equals(null);
+    }
+
+    @Test
+    public void speler_geeft_false_als_spelers_niet_equal_zijn(){
+        speler = new Speler("kenzo");
+        Speler s2 = new Speler("banaan");
+
+        assertFalse(speler.equals(s2));
+    }
+
+    @Test
+    public void speler_geeft_true_als_spelers_niet_equal_zijn(){
+        speler = new Speler("kenzo");
+        Speler s2 = new Speler("kenzo");
+
+        assertTrue(speler.equals(s2));
+    }
 }

@@ -1,11 +1,12 @@
 package domain;
 
 public class Speler {
-
 	private String naam;
+	private Dobbelsteen[] dobbelstenen;
 	
 	public Speler(String naam) {
 		this.setNaam(naam);
+        dobbelstenen = new Dobbelsteen[5];
 	}
 	
 	public String getNaam() {
@@ -22,14 +23,13 @@ public class Speler {
 	
 	@Override
     	public boolean equals(Object o){
-	    if(o != null) {
-            	Speler s = (Speler)o;
-
-            	if(this.getNaam().equals(((Speler) o).getNaam())){
-                	return true;
-            	}
+        if( o == null ){
+            throw new DomainException();
         }
 
-        return false;
+        Speler s = (Speler)o;
+        return this.getNaam()
+                   .equals(s.getNaam());
+
     }
 }

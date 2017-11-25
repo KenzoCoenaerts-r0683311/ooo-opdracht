@@ -16,10 +16,18 @@ public class SpelersLijst {
 	}
 
 	public void addSpeler(Speler nieuweSpeler) {
+	    if(nieuweSpeler == null){
+            throw new DbException();
+        }
+
 		spelersLijst.add(nieuweSpeler);
 	}
 
     public boolean beschikbareSpeler(Speler nieuweSpeler) {
+        if(nieuweSpeler == null){
+            throw new DbException();
+        }
+
         for (Speler speler : this.getSpelers()) {
             if (speler.equals(nieuweSpeler)){
                 return false;

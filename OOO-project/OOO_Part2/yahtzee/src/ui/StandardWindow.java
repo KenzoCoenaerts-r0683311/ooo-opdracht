@@ -51,13 +51,13 @@ public class StandardWindow extends Application implements Window, EventHandler<
 	}
 
 	@Override
-	public void renderWindow() throws Exception {
+	public void renderWindow(Window windowReference) throws Exception {
 		this.start(this.getStage());
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

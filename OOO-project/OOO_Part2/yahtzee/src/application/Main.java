@@ -22,7 +22,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		RegisterWindow window = new RegisterWindow();
-		window.renderWindow();
+		window.renderWindow(window);
 	}
 
 }

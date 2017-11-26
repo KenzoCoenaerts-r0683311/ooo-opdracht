@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 public interface Window {
 	public void start(Stage primaryStage) throws Exception;
 
-	public void renderWindow() throws Exception;
-
 	public Stage getStage();
 
 	public Pane getPane();
@@ -20,4 +18,6 @@ public interface Window {
 	public void setPane();
 
 	public void setScene(Pane pane, int x, int y);
+
+	void renderWindow(Window windowReference) throws Exception;
 }

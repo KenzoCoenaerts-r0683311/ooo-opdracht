@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class RegisterWindow extends DecoratedWindow implements EventHandler<ActionEvent> {
+public class RegisterWindow extends DecoratedWindow implements Window, EventHandler<ActionEvent> {
 
 	private Button registratieOk;
 	private Button registratieCancel;

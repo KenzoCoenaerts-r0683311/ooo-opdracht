@@ -10,6 +10,7 @@ public class DecoratedWindow implements Window, EventHandler<ActionEvent> {
 	Stage stage;
 	Pane pane;
 	Scene scene;
+	private Window privateWindowReference = null;
 
 	public DecoratedWindow(String title, int x, int y) {
 		this.setStage(title);
@@ -50,13 +51,14 @@ public class DecoratedWindow implements Window, EventHandler<ActionEvent> {
 	}
 
 	@Override
-	public void renderWindow() throws Exception {
+	public void renderWindow(Window windowReference) throws Exception {
+		this.privateWindowReference = windowReference;
 		this.start(this.getStage());
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

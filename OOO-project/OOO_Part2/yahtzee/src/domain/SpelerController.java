@@ -2,8 +2,6 @@ package domain;
 
 import db.SpelersLijst;
 
-import java.util.ArrayList;
-
 public class SpelerController {
     private int currentSpeler = 0;
     private SpelersLijst spelersLijst;
@@ -29,7 +27,7 @@ public class SpelerController {
 
     }
 
-    public int getDice(int i ){
+    public int getDice(int i){
         return spelersLijst.getSpeler(currentSpeler - 1)
                            .getDobbelsteen(i);
     }

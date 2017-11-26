@@ -14,7 +14,7 @@ public class SpelerControllerTest {
     }
 
     @Test
-    public void SpelerControoler_createSpeler_voeg_speler_toe(){
+    public void SpelerController_createSpeler_voeg_speler_toe(){
         controller.createSpeler("kenzo");
         controller.createSpeler("test");
         controller.createSpeler("12345");

@@ -69,7 +69,6 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 			Stage stage = (Stage) registratieCancel.getScene().getWindow();
 			stage.close();
 		}
-
 	}
 
 	@Override
